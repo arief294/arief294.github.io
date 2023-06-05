@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: black;
+                overflow: auto;
+            }
+            .loader, .loader span {
+                width: 5em;
+                height: 5em;
+                border: 0.25em solid white;
+                font-size: 100%;
+                border-radius: 7em;
+                position: fixed;
+                mix-blend-mode: screen;
+            }
+            .loader {
+                background-color: gold;
+                text-align: center;
+                animation: rotating 5s linear infinite;                
+            }
+            @keyframes rotating {
+                to {
+                    transform: rotate(8turn);
+                }
+                from {
+                    transform: rotate(4turn);
+                }
+            }
+            .loader span {
+                animation: de-rotating 1s linear infinite;
+            }
+            @keyframes de-rotating {
+                from {
+                    transform: rotate(1turn);
+                }
+                from, to{
+                    transform: rotate(0deg)(scale(1));
+                }
+                50% {
+                    transform: rotate(360deg)(scale(1.2));
+                 }
+            }
+            .loader span:nth-child(1) {
+                top: 5em;
+                left: 5em;
+                background-color: dodgerblue;
+            }
+            .loader span:nth-child(2) {
+                top: -5em;
+                left: 5em;
+                background-color: hotpink;
+            }
+            .loader span:nth-child(3) {
+                top: 5em;
+                left: -5em;
+                background-color: mediumpurple;
+            }
+            .loader span:nth-child(4) {
+                top: -5em;
+                left: -5em;
+                background-color: limegreen;
+            }
+            .loader span:nth-child(5) {
+                top: -5em;
+                left: 0em;
+                background-color: rgb(205, 94, 50);
+            }
+            .loader span:nth-child(6) {
+                top: 0em;
+                left: -5em;
+                background-color: rgb(70, 26, 190);
+            }
+            .loader span:nth-child(7) {
+                top: 5em;
+                left: 0em;
+                background-color: rgb(151, 9, 92);
+            }
+            .loader span:nth-child(8) {
+                top: 0em;
+                left: 5em;
+                background-color: rgb(234, 0, 255);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </body>
+</html>
